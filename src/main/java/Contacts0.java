@@ -3,14 +3,13 @@ import java.util.Scanner;
 
 public class Contacts0 {
 
+
+    public static final int MAX_ENTRIES = 100;
+
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
-        System.out.println("|| ===================================================");
-        System.out.println("|| ===================================================");
-        System.out.println("|| Contacts - Version 0.0");
-        System.out.println("|| Welcome to Contacts!");
-        System.out.println("|| ===================================================");
-        String[][] list = new String[100][3];
+        showWelcomeMessage("0.1");
+        String[][] list = new String[MAX_ENTRIES][3];
         int count = 0;
         while (true) {
             System.out.print("|| " + "Enter command: ");
@@ -92,7 +91,7 @@ public class Contacts0 {
                 feedback = String.format("%1$d persons found!", count);
                 break;
             case "clear":
-                list = new String[100][3];
+                list = new String[MAX_ENTRIES][3];
                 count = 0;
                 feedback = "Contacts have been cleared!";
                 break;
@@ -144,5 +143,13 @@ public class Contacts0 {
                 System.out.println("|| " + m);
             }
         }
+    }
+
+    private static void showWelcomeMessage(String versionNumber) {
+        System.out.println("|| ===================================================");
+        System.out.println("|| ===================================================");
+        System.out.println("|| Contacts - Version " + versionNumber);
+        System.out.println("|| Welcome to Contacts!");
+        System.out.println("|| ===================================================");
     }
 }
